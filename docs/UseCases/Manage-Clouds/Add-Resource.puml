@@ -1,0 +1,13 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage Cloud" #lightblue
+participant "fleet" as S
+A -> S : fleet-resource-add(name, amount)
+participant "Cloud Stack" as CS
+S -> CS : resource/add (name, amount)
+CS -> CS : Hardware.find(name)
+CS -> CS : Resource.create(name, type, amount)
+end box
+
+@enduml

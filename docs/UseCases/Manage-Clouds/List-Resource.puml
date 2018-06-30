@@ -1,0 +1,11 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Cloud" #lightblue
+participant "fleet" as S
+A -> S : fleet-resource-list
+participant "Cloud Stack" as CS
+S -> CS : Resource.find()
+end box
+
+@enduml

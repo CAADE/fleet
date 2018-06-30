@@ -1,9 +1,12 @@
 @startuml
 |actorName|
 start
-|#ffffaa|fleet|
-:activity1;
-|actor2|
-:activity2;
+|#aaffff|fleet|
+:Create Compute Resource;
+:Create Storage Resource;
+:Create Network Resource;
+:Remove Compute Resource;
+:Remove Storage Resource;
+:Remove Network Resource;
 stop
 @enduml

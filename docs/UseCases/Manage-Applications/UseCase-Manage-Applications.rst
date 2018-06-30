@@ -9,7 +9,7 @@ deployment and management of applications and services.
 Actors
 ------
 
-* :ref:`Actor-Ops-Manager`
+* :ref:`Actor-Developer`
 
 Activities
 ----------

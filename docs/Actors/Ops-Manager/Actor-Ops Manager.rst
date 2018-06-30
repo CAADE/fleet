@@ -18,12 +18,4 @@ Workflow
 
 .. image:: Workflow.png
 
-User Interface
---------------
 
-TBD
-
-Command Line Interface
-----------------------
-
-TBD
