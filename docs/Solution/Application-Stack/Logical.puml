@@ -1,0 +1,14 @@
+@startuml
+
+package "Application-Stack" {
+    interface "Application-Stack" {
+
+    }
+    CLI ()-- "Application-Stack"
+    REST ()-- "Application-Stack"
+    Web ()-- "Application-Stack"
+
+}
+
+
+@enduml

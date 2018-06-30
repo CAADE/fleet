@@ -1,0 +1,14 @@
+@startuml
+
+package "Cloud-Stack" {
+    interface "Cloud-Stack" {
+
+    }
+    CLI ()-- "Cloud-Stack"
+    REST ()-- "Cloud-Stack"
+    Web ()-- "Cloud-Stack"
+
+}
+
+
+@enduml

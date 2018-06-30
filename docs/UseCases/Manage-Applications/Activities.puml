@@ -1,0 +1,16 @@
+@startuml
+|Ops Manager|
+start
+|#cccccc|fleet|
+:Create Application;
+:Deploy Application;
+:Update Application;
+:Create Service;
+:Deploy Service;
+:Update Service;
+:Increment Service Replicas;
+:Decrement Service Replicas;
+:Set Service Replicas;
+:Remove Application;
+stop
+@enduml

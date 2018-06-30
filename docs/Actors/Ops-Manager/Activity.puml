@@ -1,0 +1,12 @@
+@startuml
+
+
+partition "Ops-Manager"  #cccccc {
+  (*) --> "Start Here"
+}
+
+partition "system.name" #ffaaaa {
+  "Start Here" --> "Here"
+}
+
+@enduml
