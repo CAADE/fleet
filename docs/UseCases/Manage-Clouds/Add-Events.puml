@@ -1,0 +1,12 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage Cloud" #lightblue
+participant "fleet" as S
+A -> S : fleet-events-add
+participant "Cloud Stack" as CS
+S -> CS : events/add (name, amount)
+CS -> CS : Events.create(name, amount)
+end box
+
+@enduml

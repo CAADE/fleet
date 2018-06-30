@@ -1,0 +1,11 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage Cloud" #lightblue
+participant "fleet" as S
+A -> S : fleet-events-list
+participant "Cloud Stack" as CS
+S -> CS : events/list (name, amount)
+CS -> CS : Events.find()
+end box
+@enduml

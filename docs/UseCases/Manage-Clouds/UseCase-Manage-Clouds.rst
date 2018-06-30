@@ -8,7 +8,7 @@ resources together. The type of the resource is determined by the hardware speci
 Actors
 ------
 
-* :ref:`Actor-Ops-Manager`
+* :ref:`Ops-Manager`
 
 Activities
 ----------
@@ -16,6 +16,8 @@ Activities
 * Manage Storage Resources
 * Manage Network Resources
 * Map Hardware to Resources
+* Manager Triggers
+* Manage Events
 
 .. image:: Activities.png
 
