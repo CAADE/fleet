@@ -1,9 +1,9 @@
 .. _SubSystem-Hardware-Stack:
 
-Hardware-Stack
-============
+Hardware Stack
+==============
 
-Hardware-Stack is a subsystem of fleet ...
+Hardware Stack is a subsystem of fleet ...
 
 Use Cases
 ---------

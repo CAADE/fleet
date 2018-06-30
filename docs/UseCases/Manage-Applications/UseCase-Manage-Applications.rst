@@ -1,7 +1,8 @@
 .. _UseCase-Manage-Applications:
 
-Use Case Manage Applications
-============================
+Manage Applications
+===================
+
 Manage Applications is primarly by the :ref:`Actor-Ops-Manager`. This includeds the creations,
 deployment and management of applications and services.
 

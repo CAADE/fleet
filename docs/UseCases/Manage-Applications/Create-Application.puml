@@ -5,7 +5,8 @@ box "Manage-Applications" #lightblue
 participant "CLI" as S
 A -> S : fleet-app-create
 participant "Application Stack" as AS
-S -> AS : Application.create()
+S -> AS : app/create
+AS -> AS : Application.create()
 end box
 
 @enduml

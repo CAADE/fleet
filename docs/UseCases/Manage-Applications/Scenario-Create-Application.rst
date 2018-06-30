@@ -4,10 +4,12 @@ Create Application
 ==================
 Create Application using the CLI with the name and a filename with a specific yaml file.
 
+.. image:: Create-Application.png
+
 .. code-block:: none
 
     # fleet app create --name <name> --filename <filename>
-    # fleet aoo create --name alert --filename app.yaml
+    # fleet app create --name alert --filename app.yaml
 
 The application yaml file  follows the following format.
 
@@ -71,6 +73,5 @@ and myStorage and externalStorage (Storage).
           network: myNetwork
           storage: externalStorage
 
-.. image:: Create-Application.png
 
 

@@ -2,11 +2,17 @@
 
 
 partition "Developer"  #cccccc {
-  (*) --> "Start Here"
+  (*) --> "Add Application"
 }
 
-partition "system.name" #ffaaaa {
-  "Start Here" --> "Here"
+partition "fleet" #aaffff {
+  "Add Application" --> "Create Application"
+  "Create Application" --> "Create Services"
+  "Create Services" --> "Increment Service Replicas"
+  "Create Services" --> "Decrement Service Replicas"
+  "Create Services" --> "Set Service Replicas"
+  "Create Application" --> "Remove Application"
+  "Remove Application" --> "Remove Services"
 }
 
 @enduml

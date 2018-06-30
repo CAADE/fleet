@@ -1,20 +1,18 @@
 @startuml
 |Developer|
 start
-|#ffffaa|system.name|
+|#aaffff|Application Stack|
 fork
-:Create Application Stack;
-:Modify Application Stack;
-:Version Application Stack;
+:Create Application;
+:Deploy Application;
+:Update Application;
+:Remove Application;
 fork again
-:Create Service Stack;
-:Modify Service Stack;
-:Version Service Stack;
+:Create Service;
+:Modify Service;
+:Increment Service Replicas;
+:Decrement Service Replicas;
+:Set Service Replicas;
 fork end
-|#aaffff|Application Manager|
-:Test Application Stack;
-:Create an Application;
-:Launch an Application in an environment;
-:Kill Application and Services;
 stop
 @enduml

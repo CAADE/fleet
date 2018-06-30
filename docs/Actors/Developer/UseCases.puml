@@ -4,8 +4,8 @@ left to right direction
 
 :Developer: as Actor
 
-rectangle "system.name" {
-    (Use Case) as U1
+rectangle "fleet" #cccccc {
+    (Manage Applications) as U1
 }
 
 Actor --> U1

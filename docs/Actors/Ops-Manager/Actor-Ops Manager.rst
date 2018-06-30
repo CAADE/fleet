@@ -1,7 +1,7 @@
 .. _Ops-Manager:
 
-Actor Ops-Manager
-=========================
+Operations Manager
+==================
 
 Use Cases
 ---------

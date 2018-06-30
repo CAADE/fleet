@@ -1,7 +1,7 @@
 .. _SubSystem-Application-Stack:
 
-Application-Stack
-============
+Application Stack
+=================
 
 Application-Stack is a subsystem of fleet ...
 

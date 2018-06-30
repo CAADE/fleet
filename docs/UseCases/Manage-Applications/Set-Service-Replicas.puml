@@ -2,8 +2,12 @@
 Actor "actorName" as A
 
 box "Manage-Applications" #lightblue
-participant "fleet" as S
-A -> S : Set-Service-Replicas
+participant "CLI" as S
+A -> S : fleet-app-create
+participant "Application Stack" as AS
+S -> AS : service/set
+AS -> AS : sails.helpers.setService()
 end box
+
 
 @enduml

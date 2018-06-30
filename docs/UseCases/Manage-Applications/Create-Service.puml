@@ -3,7 +3,10 @@ Actor "actorName" as A
 
 box "Manage-Applications" #lightblue
 participant "fleet" as S
-A -> S : Create-Service
+A -> S : fleet-service-create
+participant "Application Stack" as AS
+S -> AS : service/create
+AS -> AS : Service.create()
 end box
 
 @enduml

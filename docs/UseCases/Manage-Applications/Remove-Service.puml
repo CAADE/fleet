@@ -2,8 +2,11 @@
 Actor "actorName" as A
 
 box "Manage-Applications" #lightblue
-participant "fleet" as S
-A -> S : Remove-Service
+participant "CLI" as S
+A -> S : fleet-service-remove
+participant "Application Stack" as AS
+S -> AS : service/remove
+AS -> AS : sails.helpers.removeApplication()
 end box
 
 @enduml

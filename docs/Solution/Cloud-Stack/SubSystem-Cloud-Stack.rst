@@ -1,9 +1,9 @@
 .. _SubSystem-Cloud-Stack:
 
-Cloud-Stack
-============
+Cloud Stack
+===========
 
-Cloud-Stack is a subsystem of fleet ...
+Cloud Stack is a subsystem of fleet ...
 
 Use Cases
 ---------
