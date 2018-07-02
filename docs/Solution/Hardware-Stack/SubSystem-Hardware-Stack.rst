@@ -23,7 +23,7 @@ Users
 Uses
 ----
 
-* :ref:`Hardware-Stack`
+* :ref:`Subsystem-Hardware-Stack`
 
 Interface
 ---------
