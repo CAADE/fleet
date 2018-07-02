@@ -1,27 +1,27 @@
 @startuml
-actor Ops
+actor Dev
 
-Ops -> bin: app-create(name, yaml)
+Dev -> bin: app-create(name, yaml)
 bin -> sailsjs : app/create(name, yaml)
-Ops -> bin: app-remove
+Dev -> bin: app-remove
 bin -> sailsjs : app/remove(name)
-Ops -> bin: app-list
+Dev -> bin: app-list
 bin -> sailsjs : app/list
-Ops -> bin: service-create
+Dev -> bin: service-create
 bin -> sailsjs : service/create(name)
-Ops -> bin: service-dec
+Dev -> bin: service-dec
 bin -> sailsjs : service/dec(name, amount)
-Ops -> bin: service-inc
+Dev -> bin: service-inc
 bin -> sailsjs : service/inc(name, amount)
-Ops -> bin: service-list
+Dev -> bin: service-list
 bin -> sailsjs : service/list
-Ops -> bin: service-remove
+Dev -> bin: service-remove
 bin -> sailsjs : service/remove(name)
-Ops -> bin: instance-create
+Dev -> bin: instance-create
 bin -> sailsjs : instance/create(name)
-Ops -> bin: instance-destroy
+Dev -> bin: instance-destroy
 bin -> sailsjs : instance/destroy(name)
-Ops -> bin: instance-list
+Dev -> bin: instance-list
 bin -> sailsjs : instance/list
 
 @enduml

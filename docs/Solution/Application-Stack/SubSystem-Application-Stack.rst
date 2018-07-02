@@ -8,7 +8,7 @@ The application stack manages applications, services and Service Instance.
 Use Cases
 ---------
 
-* :ref:`UseCase-Manage-Application` - see here to find details on the interface.
+* :ref:`UseCase-Manage-Applications` - see here to find details on the interface.
 
 .. image:: UseCases.png
 
@@ -22,8 +22,8 @@ Users
 Uses
 ----
 
-* :ref:`Application-Stack`
-* :ref:`Cloud-Stack`
+* :ref:`SubSystem-Application-Stack`
+* :ref:`SubSystem-Cloud-Stack`
 
 Interface
 ---------
@@ -47,7 +47,6 @@ A typical application stack workflow or activity follows these basic patterns:
 * Modify Application
 * Delete Application
 
-Servicee are crated in response t othe creates
 .. image::  Process.png
 
 Deployment Architecture

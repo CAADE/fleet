@@ -8,3 +8,5 @@ These are the Actors of the System.
    :maxdepth: 1
 
    **/Actor*
+
+.. image:: ../UseCases/UseCases.png

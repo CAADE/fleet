@@ -2,15 +2,15 @@
 
 left to right direction
 
-actor :Ops Manager: as Ops
+actor :Developer: as Dev
 
 rectangle "Application Stack" #aaffaa {
 UseCase UC1 as "Manage Applications"
 UseCase UC2  as "Manage Services"
 
 
-Ops --> UC1
-Ops --> UC2
+Dev --> UC1
+Dev --> UC2
 }
 
 @enduml

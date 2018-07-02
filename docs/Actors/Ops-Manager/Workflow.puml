@@ -1,5 +1,5 @@
 @startuml
-|Ops-Manager|
+|Ops Manager|
 start
 |#aaffff|fleet|
 fork

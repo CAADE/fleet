@@ -7,7 +7,7 @@ Developer is repsonsible for managing applications and the development of applic
 Use Cases
 ---------
 
-* :ref:`UseCase-Manage-Application`
+* :ref:`UseCase-Manage-Applications`
 
 .. image:: UseCases.png
 

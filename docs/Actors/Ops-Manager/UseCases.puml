@@ -2,7 +2,7 @@
 
 left to right direction
 
-:Ops-Manager: as Actor
+:Ops Manager: as Actor
 
 rectangle "fleet" #cccccc {
     (Manage Clouds) as U1

@@ -1,7 +1,7 @@
 @startuml
 
 
-partition "Ops-Manager"  #cccccc {
+partition "Ops Manager"  #cccccc {
   (*) --> "Manage Cloud"
   (*) --> "Manage Policies"
   (*) --> "Manage Hardware"
