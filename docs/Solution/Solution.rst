@@ -1,5 +1,5 @@
 fleet Overview
-====================
+==============
 fleet simulator for the Modern data center. This does not actually provision software or hardware, but similates how
 it happens in a multi, hybrid cloud environment. There are three subsystems of the architecture.
 :ref:`SubSystem-Application-Stack`, :ref:`SubSystem-Cloud-Stack`, :ref:`SubSystem-Hardware-Stack`. Vehicles are
@@ -31,13 +31,6 @@ A Web interface to the simulator gives the ability to visually see how the data 
 of vehicles, applications, hardware changes, and outages.
 
 .. image:: Architecture.png
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Sub System
-
-   /Solution/index
-
 
 Deployment model
 ----------------
