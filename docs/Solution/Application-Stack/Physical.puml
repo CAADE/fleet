@@ -5,14 +5,25 @@ package "Application Stack" #ccffff {
     interface CLI
     interface Web
     interface REST
-    component sailsjs
-    component sails.io
-    component bin
+    folder nodejs #ffffff {
+        component sailsjs
+        component sails.io
+    }
+    folder bin #ffffff {
+      component app
+      component service
+      component instance
+    }
 }
-CLI -- bin
+CLI -- app
+CLI -- service
+CLI -- instance
+app -- REST
+service -- REST
+instance -- REST
 Web -- sailsjs
+Web -- REST
 REST -- sailsjs
-bin - REST
 
 Web -- sails.io
 @enduml

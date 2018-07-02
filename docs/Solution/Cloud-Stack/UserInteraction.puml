@@ -1,6 +1,37 @@
 @startuml
-actor User
+actor Ops
 
-User -> "Cloud-Stack": UseCase
+Ops -> "Cloud Stack": "Manage Policies"
+Ops -> bin: "fleet-event-add(name, amount)"
+bin -> sailsjs : event/add(name, amount)
+Ops -> bin: "fleet-event-dec(name, amount)"
+bin -> sailsjs : event/dec(name, amount)
+Ops -> bin: "fleet-event-inc(name, amount)"
+bin -> sailsjs : event/inc(name, amount)
+Ops -> bin: "fleet-event-list"
+bin -> sailsjs : event/list
+Ops -> bin: "fleet-event-remove(name)"
+bin -> sailsjs : event/remove(name)
+Ops -> bin: "fleet-event-set(name,amount)"
+bin -> sailsjs : event/set(name,amount)
+
+Ops -> bin: "fleet-trigger-add(name, events, condition, action)"
+bin -> sailsjs : trigger/add(name, events, condition, action)
+Ops -> bin: "fleet-trigger-disable(name)"
+bin -> sailsjs : trigger/disable(name)
+Ops -> bin: "fleet-trigger-enable(name)"
+bin -> sailsjs : trigger/enable(name)
+Ops -> bin: "fleet-trigger-list)"
+bin -> sailsjs : trigger/list)
+Ops -> bin: "fleet-trigger-remove(name)"
+bin -> sailsjs : trigger/remove(name)
+
+Ops -> "Cloud Stack": "Manage Clouds"
+Ops -> bin: "fleet-resource-add(name, type, quantity)"
+bin -> sailsjs: "resource/add(name, type, quantity)"
+Ops -> bin: "fleet-resource-remove(name)"
+bin -> sailsjs: "resource/remove(name)"
+Ops -> bin: "fleet-resource-list"
+bin -> sailsjs: "resource/list"
 
 @enduml

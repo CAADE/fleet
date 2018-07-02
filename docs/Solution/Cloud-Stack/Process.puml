@@ -1,18 +1,14 @@
 @startuml
 
-partition "Cloud-Stack" {
-
-}
-
-partition SubSystem  #cccccc {
-  (*) --> "Create Project"
-  --> "Write Code"
-}
-
-partition "Cloud-Stack" {
-  "Write Code" --> "Test Code"
-  "Test Code" --> "Deploy Code"
-  "Deploy Code" --> (*)
+partition "Cloud Stack" #aaffff {
+  (*) --> "Create Policy"
+  "Create Policy" --> "Create Trigger"
+  "Create Trigger" --> "Enable Policy"
+  "Enable Policy" --> "Disable Policy"
+  "Disable Policy" --> (*)
+  (*) --> "Create Resource"
+  "Create Resource" --> "Remove Resource"
+  "Remove Resource" --> (*)
 }
 
 @enduml

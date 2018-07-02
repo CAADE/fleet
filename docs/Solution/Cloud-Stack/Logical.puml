@@ -1,14 +1,87 @@
 @startuml
 
-package "Cloud-Stack" {
-    interface "Cloud-Stack" {
+package "Cloud Stack" #aaffff {
+    interface "Cloud Stack" {
+      resource()
+      trigger()
+      events()
+      policy()
+    }
+    class Resource {
+      string name
+      boolean disabled
+      number capacity
+      number available
+      add(name, type, capacity)
+      remove(name, type, capacity)
+      list()
+    }
+    class ComputeResource {
+    }
+    class NetworkResource {
+    }
+    class StorageResource {
+    }
+    class Events {
+      string name
+      number value
+      add(name, value)
+      dec(name,value)
+      inc(name, value)
+      list()
+      remove(name)
+      set(name,value)
+    }
+    class Trigger {
+      string name
+      string condition
+      boolean fired
+      string action
+      boolean disabled
+      add(name, condition, action, events, service)
+      disable(name)
+      enable(name)
+      list()
+      remove(name)
+    }
+    class Policy {
+      string name
+      boolean disabled
+      add(name,yaml)
+      addTrigger(name, trigger)
+      disable(name)
+      enable(name)
+      list()
+      remove(name)
 
     }
-    CLI ()-- "Cloud-Stack"
-    REST ()-- "Cloud-Stack"
-    Web ()-- "Cloud-Stack"
+    Resource <|-- ComputeResource
+    Resource <|-- StorageResource
+    Resource <|-- NetworkResource
 
+    Policy "1" *--> "n" Trigger
+    Trigger o--> Events
 }
 
+CLI ()-- "Cloud Stack"
+REST ()-- "Cloud Stack"
+Web ()-- "Cloud Stack"
+
+package "Hardware Stack" #aaffaa {
+    class Hardware {
+    }
+}
+
+package "Application Stack" #ff88aa {
+    class ServiceInstance {
+    }
+    class Service {
+    }
+}
+
+Resource o-> Hardware
+
+ServiceInstance o--> Resource
+Service <-o Trigger
 
 @enduml

@@ -1,11 +1,34 @@
 @startuml
 
-package "Cloud-Stack" {
-component component1
-component component2
-interface i1
+package "Cloud Stack" #aaffff {
+  folder nodejs #ffffff {
+    component sailsjs
+    component sails.io
+  }
 
+  interface REST
+  interface CLI
+  interface Web
+
+  REST - sailsjs
+
+  folder bin #ffffff {
+    component events
+    component trigger
+    component resource
+    component policy
+  }
+  CLI -- events
+  CLI -- trigger
+  CLI -- resource
+  CLI -- policy
+
+  events -- REST
+  trigger -- REST
+  resource -- REST
+  policy -- REST
+  Web -- REST
+  Web -- sails.io
 }
-i1 - component1
-component1 --> component2
+
 @enduml

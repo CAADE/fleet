@@ -1,10 +1,16 @@
 @startuml
 
-package  "Application Stack" #dddddd {
+package  "Application Stack" #aaffff {
+  folder bin #ffffff {
+    file app
+    file service
+    file instance
+  }
   node sailsjs
   database DB1
 
   sailsjs .. DB1
+  bin .. sailsjs
 }
 
 @enduml
