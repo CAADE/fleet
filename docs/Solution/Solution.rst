@@ -9,14 +9,14 @@ connected to the Data Center via the Services and the Cloud layer.
    :maxdepth: 2
    :caption: Users
 
-   /Actor/index
+   ../Actor/index
 
 
 .. toctree::
    :maxdepth: 2
    :caption: High Level Use Cases
 
-   /UseCase/index
+   ../UseCase/index
 
 
 .. image:: /UseCases/UseCases.png
@@ -30,7 +30,15 @@ The Application Stack maps to Cloud Stack (Virtualized) resources which are mapp
 A Web interface to the simulator gives the ability to visually see how the data center reacts to changes in number
 of vehicles, applications, hardware changes, and outages.
 
-.. image:: Architecture.png
+.. image:: ../Architecture.png
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    **/SubSystem*
+
+
 
 Deployment model
 ----------------
