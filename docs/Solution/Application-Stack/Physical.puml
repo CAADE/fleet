@@ -1,11 +1,18 @@
 @startuml
 
-package "Application-Stack" {
-component component1
-component component2
-interface i1
 
+package "Application Stack" #ccffff {
+    interface CLI
+    interface Web
+    interface REST
+    component sailsjs
+    component sails.io
+    component bin
 }
-i1 - component1
-component1 --> component2
+CLI -- bin
+Web -- sailsjs
+REST -- sailsjs
+bin - REST
+
+Web -- sails.io
 @enduml

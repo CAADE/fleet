@@ -1,13 +1,41 @@
 @startuml
 
-package "Application-Stack" {
-    interface "Application-Stack" {
+package "Cloud Stack" #aaffff {
+  class "CloudResource" {
+  }
+}
 
+package "Application Stack" #dddddd {
+    interface "Application Stack" {
+      app
+      service
+      instance
+      create()
+      update()
+      destroy()
+      list()
     }
-    CLI ()-- "Application-Stack"
-    REST ()-- "Application-Stack"
-    Web ()-- "Application-Stack"
+    CLI ()-- "Application Stack"
+    REST ()-- "Application Stack"
+    Web ()-- "Application Stack"
 
+   class Application {
+    string name
+   }
+   class Service {
+    string name
+    string type
+
+   }
+   class ServiceInstance {
+    string name
+   }
+
+   "Application Stack" ..> Application
+   Application "n" *- "m" Service : services
+   Service "1" *-- "*" ServiceInstance : instances
+   Service "1" *- "*" Service : links
+   ServiceInstance "i" o- "j" CloudResource : resources
 }
 
 

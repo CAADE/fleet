@@ -4,10 +4,14 @@ left to right direction
 
 :Ops-Manager: as Actor
 
-rectangle "system.name" {
-    (Use Case) as U1
+rectangle "fleet" #cccccc {
+    (Manage Clouds) as U1
+    (Manage Hardware) as U2
+    (Manage Policies) as U3
 }
 
 Actor --> U1
+Actor --> U2
+Actor --> U3
 
 @enduml

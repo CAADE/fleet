@@ -1,18 +1,17 @@
 @startuml
 
-partition "Application-Stack" {
-
+partition "Application Stack" #aaffff {
+  (*) --> "Create Application"
+  "Create Application" --> "Create Service"
+  "Create Service" --> "Create ServiceInstance"
+  "Create Service" --> "Modify Service"
+  "Modify Service" --> "Increment Service"
+  "Modify Service" --> "Decrement Service"
+  "Increment Service" --> "Create ServiceInstance"
+  "Decrement Service" --> "Destroy ServiceInstance"
 }
 
-partition SubSystem  #cccccc {
-  (*) --> "Create Project"
-  --> "Write Code"
+partition "Cloud Stack" #aaffaa {
+    "Create ServiceInstance" --> "Create Cloud Resource"
 }
-
-partition "Application-Stack" {
-  "Write Code" --> "Test Code"
-  "Test Code" --> "Deploy Code"
-  "Deploy Code" --> (*)
-}
-
 @enduml

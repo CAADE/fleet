@@ -1,20 +1,19 @@
 @startuml
 |Ops-Manager|
 start
-|#ffffaa|system.name|
+|#aaffff|fleet|
 fork
-:Create Application Stack;
-:Modify Application Stack;
-:Version Application Stack;
+:Create Cloud Resource;
+:Modify Cloud Resource;
+:Remove Cloud Resource;
 fork again
-:Create Service Stack;
-:Modify Service Stack;
-:Version Service Stack;
+:Create Policy;
+:Modify Policy;
+:Remove Policy;
+fork again
+:Add Hardware;
+:Modify Hardware;
+:Remove Hardware;
 fork end
-|#aaffff|Application Manager|
-:Test Application Stack;
-:Create an Application;
-:Launch an Application in an environment;
-:Kill Application and Services;
 stop
 @enduml

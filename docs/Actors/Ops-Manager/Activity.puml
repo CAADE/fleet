@@ -2,11 +2,25 @@
 
 
 partition "Ops-Manager"  #cccccc {
-  (*) --> "Start Here"
+  (*) --> "Manage Cloud"
+  (*) --> "Manage Policies"
+  (*) --> "Manage Hardware"
 }
 
-partition "system.name" #ffaaaa {
-  "Start Here" --> "Here"
+partition "Cloud Stack" #aaffaa {
+  "Manage Cloud" --> "Create Cloud Resources"
+  "Create Cloud Resources" --> "Update Cloud Resources"
+  "Update Cloud Resources" --> "Remove Cloud Resources"
+
+  "Manage Policies" --> "Add Policy"
+  "Add Policy" --> "Update Policy"
+  "Update Policy" --> "Remove Policy"
+}
+
+partition "Hardware Stack" #aaffff {
+  "Manage Hardware" --> "Add Hardware"
+  "Add Hardware" --> "Update Hardware"
+  "Update Hardware" --> "Remove Hardware"
 }
 
 @enduml

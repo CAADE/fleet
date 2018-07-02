@@ -25,7 +25,7 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     services: {
       collection: 'Service',
-      via: 'apps'
+      via: 'app'
     }
   },
 

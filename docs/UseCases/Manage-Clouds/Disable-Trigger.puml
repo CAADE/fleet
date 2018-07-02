@@ -1,0 +1,12 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Clouds" #lightblue
+participant "fleet" as S
+A -> S : fleet-trigger-disable(name)
+participant "Cloud Stack" as CS
+S -> CS : fleet/disable(name)
+CS -> CS : Trigger.update(name, disabled)
+end box
+
+@enduml

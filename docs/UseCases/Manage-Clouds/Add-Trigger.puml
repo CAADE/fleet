@@ -1,0 +1,12 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Clouds" #lightblue
+participant "fleet" as S
+A -> S : fleet-trigger-add(name, event, condition, action)
+participant "Cloud Stack" as CS
+S -> CS : trigger/add(name, event, condition, action)
+CS -> CS : Trigger.create(name, event, condition, action)
+end box
+
+@enduml
