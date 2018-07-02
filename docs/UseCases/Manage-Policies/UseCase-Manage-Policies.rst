@@ -1,7 +1,7 @@
 .. _UseCase-Manage-Policies:
 
-Use Case Manage-Policies
-====================
+Manage Policies
+===============
 
 _Description_
 

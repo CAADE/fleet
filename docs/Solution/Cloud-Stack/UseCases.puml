@@ -4,7 +4,7 @@ left to right direction
 
 actor :Ops Manager: as Ops
 
-rectangle "Cloud Stack" #dddddd {
+rectangle "Cloud Stack" #ccffff {
     UseCase UC1 as "Manage Clouds"
     UseCase UC2  as "Manage Policies"
 }

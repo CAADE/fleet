@@ -1,5 +1,5 @@
-fleet Use Cases
-=========================
+Use Cases
+=========
 
 .. toctree::
     :glob:

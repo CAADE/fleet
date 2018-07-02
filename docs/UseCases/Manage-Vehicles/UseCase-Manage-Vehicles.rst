@@ -1,7 +1,7 @@
 .. _UseCase-Manage-Vehicles:
 
-Use Case Manage-Vehicles
-====================
+Manage Vehicles
+===============
 
 _Description_
 
