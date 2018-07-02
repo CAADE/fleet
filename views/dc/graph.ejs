@@ -403,24 +403,42 @@
       let total = policy.triggers.length;
       let fired = 0;
       let eventID = 0;
+      let events = {};
       for(let id in policy.triggers) {
-        let trigger = policyMap[name].triggers[id];
+        let trigger = policy.triggers[id];
         if(trigger.fired) {
           fired++;
         }
+        events[trigger.event] = trigger.event;
       }
       let row = document.getElementById('policy-' + name);
       if (!row) {
-        row = table.insertRow(1);
+        row = table.insertRow();
         row.id = 'policy-' + name;
         let cell1 = row.insertCell(0);
         cell1.width = "100px";
         let cell2 = row.insertCell(1);
         cell2.width = "100px";
-        cell1.innerHTML = name;
-        cell1.className = 'Tevents-' + eventID;
-        cell2.innerHTML = fired + '/' + total;
-        cell2.id = 'triggerValue-' + event;
+      }
+      row.cells[0].innerHTML = name;
+      row.cells[0].className = 'Tevents-' + eventID;
+      row.cells[1].innerHTML = fired + '/' + total;
+      row.cells[1].id = 'triggerValue-' + event;
+
+      for(let id in events) {
+        let erow = document.getElementById('pevent-' + name + '-' + id);
+        if(!erow) {
+          erow = table.insertRow();
+          let cell1 = erow.insertCell(0);
+          cell1.width = '100px';
+          let cell2 = erow.insertCell(1);
+          cell2.width = '100px';
+        }
+        erow.cells[0].innerHTML = "";
+        erow.cells[0].id = 'triggerValue-' + id;
+        erow.cells[1].innerHTML = "event";
+        erow.cells[1].className = "Tevents-" + id;
+        erow.cells[1].id = 'triggerValue-' + id;
       }
     }
   }
@@ -430,18 +448,19 @@
   }
 
   function triggered(policy, trigger) {
-    let row = document.getElementById('trigger-' + trigger.event.name);
-    let cell = document.getElementById('triggerValue-' + trigger.event.name);
-    row.bgColor = "darkgreen";
+    let row = document.getElementById('policy-' + policy.name);
+    let cell = document.getElementById('triggerValue-' + trigger.event.id);
+    row.bgColor = '#008800';
     cell.innerHTML = trigger.condition.replace('events.value', trigger.event.value);
     setTimeout(function () {
+      row.bgColor = 'black';
       if (trigger.fired) {
-        cell.bgColor = '#000088';
+        cell.bgColor = '#008800';
       }
       else {
         cell.bgColor = 'black';
       }
-    }, 3000);
+    }, 2000);
   }
 
   function addNode(lnodes) {
@@ -641,7 +660,7 @@
       drawPolicies();
     });
     io.socket.on('triggered', function (obj) {
-      triggered(obj);
+      triggered(obj.policy, obj.trigger);
     });
     getMetrics();
   }

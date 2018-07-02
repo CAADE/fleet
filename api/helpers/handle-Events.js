@@ -31,7 +31,7 @@ module.exports = {
           let actions = trigger.action.split(/;/);
           await Trigger.update({id: trigger.id}, {fired: true});
           trigger = await Trigger.findOne({id: trigger.id}).populateAll();
-          sails.sockets.broadcast('fleet', 'triggered', trigger);
+          sails.sockets.broadcast('fleet', 'triggered', {policy:trigger.policy, trigger:trigger});
           for (let j = 0; j < actions.length; j++) {
             try {
               await eval(actions[j]);
@@ -44,7 +44,7 @@ module.exports = {
         else if (!flag && trigger.fired) {
           await Trigger.update({id: trigger.id}, {fired: false});
           trigger = await Trigger.findOne({id: trigger.id}).populateAll();
-          sails.sockets.broadcast('fleet', 'triggered', trigger);
+          sails.sockets.broadcast('fleet', 'triggered', {policy:trigger.policy, trigger:trigger});
         }
       }
       // Load the Service again and broadcast change.

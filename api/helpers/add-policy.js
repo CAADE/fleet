@@ -42,7 +42,6 @@ module.exports = {
       let data = inputs.policy;
       // Create the app first.
       let policy = await Policy.create({name: inputs.name, disabled: false}).fetch();
-      sails.sockets.broadcast('fleet', 'policy', policy);
       // Now create the resources in the cloud for the application.
       let i = 0;
       for (let id in data.triggers) {
@@ -54,9 +53,11 @@ module.exports = {
           condition: tdata.condition,
           action: tdata.action
         });
-        trigger = await Trigger.update({id: trigger.id}, {fired:false, policy:policy.id}).fetch();
+        trigger = await Trigger.update({id: trigger.id}, {fired: false, policy: policy.id}).fetch();
         i++;
       }
+      policy = await Policy.findOne({id: policy.id}).populateAll();
+      sails.sockets.broadcast('fleet', 'policy', policy);
       return exits.success('Ok');
     }
     catch (e) {

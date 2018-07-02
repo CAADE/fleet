@@ -1,0 +1,11 @@
+@startuml
+Actor "Ops Manager" as A
+
+box "Manage Policies" #lightblue
+participant "fleet" as S
+A -> S : fleet-policy-list
+participant "Cloud Stack" as CS
+S -> CS : policy/list
+CS -> CS : Policy.find()
+end box
+@enduml

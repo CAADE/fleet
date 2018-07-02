@@ -80,44 +80,18 @@ async function addEvents() {
   sails.sockets.broadcast('fleet', 'events', event);
 }
 
-async function addTriggers() {
-  let event = await Events.findOne({name: 'ingestion'});
-  for (let i = 0; i < 10; i++) {
-    let trigger = await Trigger.create({
-      name: 'ingestion' + i,
-      event: event.id,
-      condition: 'events.value>' + (i * 1000),
-      action: 'sails.helpers.incService("ingestion",5);'
-    });
-    trigger = await Trigger.create({
-      name: 'ingestion0' + i,
-      event: event.id,
-      condition: 'events.value<' + (i * 1000),
-      action: 'sails.helpers.decService("ingestion",5);'
-    });
-  }
+async function addPolicies() {
+  const policy1 = YAML.load('assets/policy.yaml');
+  policy1.name = 'accident';
+  await sails.helpers.addPolicy.with(policy1);
 
-  event = await Events.findOne({name: 'accident'});
-  for (let i = 0; i < 10; i++) {
-    let trigger = await Trigger.create({
-      name: 'accident' + i,
-      event: event.id,
-      condition: 'events.value>' + (i * 100),
-      action: 'sails.helpers.incService("ingestion",2);' +
-      'sails.helpers.incService("streaming", 2);' +
-      'sails.helpers.decService("analytics", 2);' +
-      'sails.helpers.incService("notificationGateway", 2);'
-    });
-    trigger = await Trigger.create({
-      name: 'accident0' + i,
-      event: event.id,
-      condition: 'events.value<' + ((i * 100)),
-      action: 'sails.helpers.decService("ingestion",2);' +
-      'sails.helpers.decService("streaming", 2);' +
-      'sails.helpers.incService("analytics", 2);' +
-      'sails.helpers.decService("notificationGateway", 2);'
-    });
-  }
+  const policy2 = YAML.load('assets/policy2.yaml');
+  policy2.name = 'ingestion';
+  await sails.helpers.addPolicy.with(policy2);
+
+  const policy3 = YAML.load('assets/policy3.yaml');
+  policy3.name = 'thruput';
+  await sails.helpers.addPolicy.with(policy3);
 }
 
 module.exports = {
@@ -155,13 +129,14 @@ module.exports = {
       await Hardware.destroy({});
       await Service.destroy({});
       await ServiceInstance.destroy({});
+      await Policy.destroy({});
       await Trigger.destroy({});
       await Vehicle.destroy({});
       await Cloud.destroy({});
       await addClouds();
       await addApplications();
       await addEvents();
-      await addTriggers();
+      await addPolicies();
 
       // Display the results
       if (inputs.mode === 'json') {

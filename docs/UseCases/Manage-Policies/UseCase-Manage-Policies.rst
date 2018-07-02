@@ -3,19 +3,24 @@
 Manage Policies
 ===============
 
-_Description_
+The Ops Manager can set up policies that watch specific events. If the events pass a specific condition then an action
+is performed. See :ref:`Scenario-Add-Policy` for format details.
 
 Actors
 ------
 
-* _Actors_
+* :ref:`Ops-Manager`
 
 Activities
 ----------
 
 .. image:: Activities.png
 
-* _Activities_
+* Add Policy
+* Disable Policy
+* Enable Policy
+* List Policy
+* Remove Policy
 
 Detail Scenarios
 ----------------
@@ -25,10 +30,4 @@ Detail Scenarios
    :maxdepth: 1
 
    Scenario*
-
-Systems Involved
-----------------
-
-* _Systems_
-
 

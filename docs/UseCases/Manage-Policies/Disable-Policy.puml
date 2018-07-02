@@ -1,0 +1,12 @@
+@startuml
+Actor "Ops Manager" as A
+
+box "Manage Policies" #lightblue
+participant "fleet" as S
+A -> S : fleet-policy-disable
+participant "Cloud Stack" as CS
+S -> CS : policy/disable (name)
+CS -> CS : Policy.update(name, disabled)
+end box
+@enduml
+

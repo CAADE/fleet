@@ -1,9 +1,10 @@
 @startuml
-|actorName|
+|Ops Manager|
 start
-|#ffffaa|fleet|
-:activity1;
-|actor2|
-:activity2;
+|#aaffff|fleet|
+:Add Policy;
+:Enable Policy;
+:Disable Policy;
+:Remove Policy;
 stop
 @enduml

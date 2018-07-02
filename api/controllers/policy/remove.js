@@ -32,7 +32,11 @@ module.exports = {
     try {
       let policy = await Policy.findOne({name:inputs.name});
       if (!policy) {return exits.notFound('/dc/graph');}
+      for(let i in policy.triggers) {
+        await Trigger.destroy({id:policy.triggers[i].id});
+      }
       await Policy.destroy({id:policy.id});
+      sails.sockets.broadcast('fleet', 'policy-destroy', policy);
 
       // Display the results
       if(inputs.mode === 'json') {

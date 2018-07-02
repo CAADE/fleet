@@ -1,0 +1,11 @@
+@startuml
+Actor "Ops Manager" as A
+
+box "Manage Policies" #lightblue
+participant "fleet" as S
+A -> S : fleet-policy-add
+participant "Cloud Stack" as CS
+S -> CS : policy/add (name, triggers)
+CS -> CS : sails.helpers.addPolicy(name, triggers)
+end box
+@enduml

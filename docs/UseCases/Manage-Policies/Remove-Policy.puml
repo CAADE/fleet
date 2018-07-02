@@ -1,0 +1,11 @@
+@startuml
+Actor "Ops Manager" as A
+
+box "Manage Policies" #lightblue
+participant "fleet" as S
+A -> S : fleet-policy-remove
+participant "Cloud Stack" as CS
+S -> CS : policy/remove (name)
+CS -> CS : Policy.destroy(name)
+end box
+@enduml
