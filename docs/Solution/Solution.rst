@@ -9,17 +9,17 @@ connected to the Data Center via the Services and the Cloud layer.
    :maxdepth: 2
    :caption: Users
 
-   Actor/index
+   /Actor/index
 
 
 .. toctree::
    :maxdepth: 2
    :caption: High Level Use Cases
 
-   UseCase/index
+   /UseCase/index
 
 
-.. image:: UseCases/UseCases.png
+.. image:: /UseCases/UseCases.png
 
 Logical Architecture
 --------------------
@@ -36,7 +36,7 @@ of vehicles, applications, hardware changes, and outages.
    :maxdepth: 2
    :caption: Sub System
 
-   Solution/index
+   /Solution/index
 
 
 Deployment model
@@ -46,5 +46,5 @@ This simulator can be deployed through a simple container. The container consist
 The Web Interface is used to visualize the simulation. The simulation can be driven with the scripting interface on
 the command line or via a REST interface.
 
-.. image:: Solution/Physical.png
+.. image:: /Solution/Physical.png
 
