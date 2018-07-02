@@ -1,5 +1,5 @@
 @startuml
-Actor "actorName" as A
+Actor "Developer" as A
 
 box "Manage Applications" #lightblue
 participant "fleet" as S

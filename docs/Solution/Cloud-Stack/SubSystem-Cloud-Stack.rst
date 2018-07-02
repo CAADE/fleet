@@ -62,7 +62,7 @@ A CLI is defined in the bin directory.
 
 Physical Architecture
 ---------------------
-There are three interfaces to the Application Stack subsystem. CLI, Web, and REST. The CLI communicates
+There are three interfaces to the Cloud Stack subsystem. CLI, Web, and REST. The CLI communicates
 with the Cloud Stack via the REST interface. All REST interfaces are accessible via a CLI. The Web interface
 utilizes the sails.io subsystem to have a web interface that is interaction with the sailsj application without
 pooling (COMET).

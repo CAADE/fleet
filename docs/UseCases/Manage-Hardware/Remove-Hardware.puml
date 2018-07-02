@@ -1,0 +1,13 @@
+@startuml
+
+Actor "Ops Manager" as A
+
+box "Manage Hardware" #lightblue
+participant "fleet" as S
+A -> S : fleet-hardware-remove
+participant "Hardware Stack" as CS
+S -> CS : hardware/remove (name)
+CS -> CS : Hardware.destroy(name)
+end box
+
+@enduml

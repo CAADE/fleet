@@ -1,9 +1,17 @@
 @startuml
-|actorName|
+|Ops Manager|
 start
-|#ffffaa|fleet|
-:activity1;
-|actor2|
-:activity2;
+|#aaffff|fleet|
+fork
+:Create Compute Hardware;
+:Remove Compute Hardware;
+fork again
+:Create Network Hardware;
+:Remove Network Hardware;
+fork again
+:Create Storage Hardware;
+:Remove Storage Hardware;
+fork end
+
 stop
 @enduml

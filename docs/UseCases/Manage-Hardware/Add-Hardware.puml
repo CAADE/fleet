@@ -1,0 +1,12 @@
+@startuml
+Actor "Ops Manager" as A
+
+box "Manage Hardware" #lightblue
+participant "fleet" as S
+A -> S : fleet-hardware-add
+participant "Hardware Stack" as CS
+S -> CS : hardware/add (name, type, capacity)
+CS -> CS : Hardware.create(name, type, capacity)
+end box
+
+@enduml

@@ -1,6 +1,12 @@
 @startuml
-actor User
+actor Ops
 
-User -> "Hardware-Stack": UseCase
+Ops -> "Cloud Stack": "Manage Hardware"
+Ops -> bin: "fleet-hardware-add(name, type, capacity)"
+bin -> sailsjs : hardware/add(name, type, capacity)
+Ops -> bin: "fleet-hardware-remove(name)"
+bin -> sailsjs : hardware/remove(name)"
+Ops -> bin: "fleet-hardware-list"
+bin -> sailsjs : hardware/list"
 
 @enduml

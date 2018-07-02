@@ -2,7 +2,8 @@
 
 Manage Clouds
 =============
-Allow the :ref:`Actor-Ops-Manager` to add cloud resource to the data center. Map the hardware and
+
+Allow the :ref:`Ops-Manager` to add cloud resource to the data center. Map the hardware and
 resources together. The type of the resource is determined by the hardware specified by the name.
 
 Actors
@@ -12,6 +13,7 @@ Actors
 
 Activities
 ----------
+
 * Manage Compute Resources
 * Manage Storage Resources
 * Manage Network Resources
@@ -24,6 +26,9 @@ Activities
 
 Detail Scenarios
 ----------------
+
+Each scenarios have details of the commands from the Web and the binary command line interface.
+Click on each scenario to see the details.
 
 .. toctree::
    :glob:

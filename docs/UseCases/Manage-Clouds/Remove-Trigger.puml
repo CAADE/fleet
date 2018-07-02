@@ -1,5 +1,5 @@
 @startuml
-Actor "actorName" as A
+Actor "Ops Manager" as A
 
 box "Manage-Clouds" #lightblue
     participant "fleet" as S

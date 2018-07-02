@@ -1,0 +1,13 @@
+@startuml
+
+Actor "Ops Manager" as A
+
+box "Manage Hardware" #lightblue
+participant "fleet" as S
+A -> S : fleet-hardware-list
+participant "Hardware Stack" as CS
+S -> CS : hardware/list
+CS -> CS : Hardware.find()
+end box
+
+@enduml

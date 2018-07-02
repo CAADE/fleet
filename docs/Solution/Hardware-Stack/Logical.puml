@@ -1,14 +1,45 @@
 @startuml
 
-package "Hardware-Stack" {
-    interface "Hardware-Stack" {
-
+package "Hardware Stack" #aaffff {
+    interface "Hardware Stack" {
+      hardware
     }
-    CLI ()-- "Hardware-Stack"
-    REST ()-- "Hardware-Stack"
-    Web ()-- "Hardware-Stack"
-
+    class Hardware {
+      string name
+      string type
+      boolean disabled
+      number capacity
+      number available
+      add(name,type,capacity)
+      list
+      remove(name)
+    }
+    class ComputeHardware {
+    }
+    class StorageHardware {
+    }
+    class NetworkHardware {
+    }
+    Hardware <|-- ComputeHardware
+    Hardware <|-- StorageHardware
+    Hardware <|-- NetworkHardware
 }
 
+package "Cloud Stack" #aaffaa {
+  class ComputeResource {
+  }
+  class NetworkResource {
+  }
+  class StorageResource {
+  }
+}
+
+ComputeHardware -- ComputeResource
+NetworkHardware -- NetworkResource
+StorageHardware -- StorageResource
+
+CLI ()-- "Hardware Stack"
+REST ()-- "Hardware Stack"
+Web ()-- "Hardware Stack"
 
 @enduml

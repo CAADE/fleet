@@ -1,18 +1,10 @@
 @startuml
 
-partition "Hardware-Stack" {
-
-}
-
-partition SubSystem  #cccccc {
-  (*) --> "Create Project"
-  --> "Write Code"
-}
-
-partition "Hardware-Stack" {
-  "Write Code" --> "Test Code"
-  "Test Code" --> "Deploy Code"
-  "Deploy Code" --> (*)
+partition "Hardware Stack" #aaffff {
+  (*) --> "Create Hardware"
+  "Create Hardware" --> "Update Hardware"
+  "Update Hardware" --> "Remove Hardware"
+  "Remove Hardware" --> (*)
 }
 
 @enduml

@@ -3,13 +3,13 @@
 Manage Applications
 ===================
 
-Manage Applications is primarly by the :ref:`Actor-Ops-Manager`. This includeds the creations,
+Manage Applications is primarly by the :ref:`Developer`. This includeds the creations,
 deployment and management of applications and services.
 
 Actors
 ------
 
-* :ref:`Actor-Developer`
+* :ref:`Developer`
 
 Activities
 ----------
@@ -22,6 +22,9 @@ Activities
 
 Detail Scenarios
 ----------------
+
+Each scenarios have details of the commands from the Web and the binary command line interface.
+Click on each scenario to see the details.
 
 .. toctree::
    :glob:

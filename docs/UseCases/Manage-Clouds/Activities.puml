@@ -1,5 +1,5 @@
 @startuml
-|actorName|
+|Ops Manager|
 start
 |#aaffff|fleet|
 :Create Compute Resource;

@@ -1,24 +1,30 @@
 .. _UseCase-Manage-Hardware:
 
-Use Case Manage-Hardware
-====================
+Manage Hardware
+===============
 
-_Description_
+The :ref:`Ops-Manager` is responsible for managing the hardware in the data center. The hardware only represents
+what is in the data center. There are three types of hardware compute, storage, and network.
 
 Actors
 ------
 
-* _Actors_
+* :ref:`Ops-Manager`
 
 Activities
 ----------
 
-.. image:: Activities.png
+* Manage Compute Hardware
+* Manage Network Hardware
+* Manage Storage Hardware
 
-* _Activities_
+.. image:: Activities.png
 
 Detail Scenarios
 ----------------
+
+Each scenarios have details of the commands from the Web and the binary command line interface.
+Click on each scenario to see the details.
 
 .. toctree::
    :glob:
@@ -29,6 +35,5 @@ Detail Scenarios
 Systems Involved
 ----------------
 
-* _Systems_
-
+* :ref:`SubSystem-Hardware-Stack`
 

@@ -1,11 +1,21 @@
 @startuml
 
-package "Hardware-Stack" {
-component component1
-component component2
-interface i1
-
+package "Hardware Stack" #ccffff {
+    interface CLI
+    interface Web
+    interface REST
+    folder nodejs #ffffff {
+        component sailsjs
+        component sails.io
+    }
+    folder bin #ffffff {
+      component hardware
+    }
 }
-i1 - component1
-component1 --> component2
+CLI -- hardware
+hardware -- REST
+Web -- sailsjs
+Web -- REST
+REST -- sailsjs
+
 @enduml

@@ -5,7 +5,7 @@ left to right direction
 :Developer: as Dev
 :Operation Manager: as Ops
 
-rectangle "fleet"  #cccccc {
+rectangle "fleet"  #ccffff {
     (Manage Applications) as MA
     (Manage Clouds) as MC
     (Manage Hardware) as MH
