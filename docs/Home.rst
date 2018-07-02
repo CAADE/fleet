@@ -9,14 +9,14 @@ connected to the Data Center via the Services and the Cloud layer.
    :maxdepth: 2
    :caption: Users
 
-   ./Actor/index
+   */Actor/index
 
 
 .. toctree::
    :maxdepth: 2
    :caption: High Level Use Cases
 
-   ./UseCase/index
+   */UseCase/index
 
 
 .. image:: ./UseCases/UseCases.png
@@ -36,7 +36,7 @@ of vehicles, applications, hardware changes, and outages.
    :maxdepth: 2
    :caption: Sub System
 
-   ./Solution/index
+   */Solution/index
 
 
 Deployment model
