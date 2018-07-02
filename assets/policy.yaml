@@ -1,0 +1,20 @@
+policy:
+  triggers:
+   -  events: tps
+      action: sails.helpers.incService('ingestion', 10);
+      condition: events.value>100
+   -  events: tps
+      action: sails.helpers.incService('ingestion', 10);
+      condition: events.value>200
+   -  events: tps
+      action: sails.helpers.incService('ingestion', 10);
+      condition: events.value>300
+   -  events: tps
+      action: sails.helpers.decService('ingestion', 10);
+      condition: events.value<100
+   -  events: tps
+      action: sails.helpers.decService('ingestion', 10);
+      condition: events.value<200
+   -  events: tps
+      action: sails.helpers.decService('ingestion', 10);
+      condition: events.value<300

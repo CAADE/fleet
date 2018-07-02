@@ -60,7 +60,7 @@
         </tr>
       </table>
 
-      <table id="triggers" width="210px">
+      <table id="policies" width="210px">
         <tr>
           <td colspan="2"><h4>Policies</h4></td>
         </tr>
@@ -105,7 +105,7 @@
   //////////////////////////////////////////////
   // Initialize
   let showInstances = true;
-  let triggerMap = {};
+  let policyMap = {};
   let edgesMap = {};
   let nodesMap = {};
   let nodes;
@@ -115,7 +115,7 @@
 
   function initGraph() {
     showInstances = true;
-    triggerMap = {};
+    policyMap = {};
     edgesMap = {};
     nodesMap = {};
     nodes = new vis.DataSet([]);
@@ -396,29 +396,28 @@
     }
   }
 
-  function drawTriggers() {
-    let table = document.getElementById('triggers');
-    for (let event in triggerMap) {
-      let total = 0
+  function drawPolicies() {
+    let table = document.getElementById('policies');
+    for (let name in policyMap) {
+      let policy = policyMap[name];
+      let total = policy.triggers.length;
       let fired = 0;
       let eventID = 0;
-      let row = document.getElementById('trigger-' + event);
-      for (let name in triggerMap[event]) {
-        let trigger = triggerMap[event][name];
-        eventID = trigger.event.id;
-        if (trigger.fired) {
+      for(let id in policy.triggers) {
+        let trigger = policyMap[name].triggers[id];
+        if(trigger.fired) {
           fired++;
         }
-        total++;
       }
+      let row = document.getElementById('policy-' + name);
       if (!row) {
         row = table.insertRow(1);
-        row.id = 'trigger-' + event;
+        row.id = 'policy-' + name;
         let cell1 = row.insertCell(0);
         cell1.width = "100px";
         let cell2 = row.insertCell(1);
         cell2.width = "100px";
-        cell1.innerHTML = event;
+        cell1.innerHTML = name;
         cell1.className = 'Tevents-' + eventID;
         cell2.innerHTML = fired + '/' + total;
         cell2.id = 'triggerValue-' + event;
@@ -426,14 +425,11 @@
     }
   }
 
-  function addTrigger(trigger) {
-    if (!triggerMap.hasOwnProperty(trigger.event.name)) {
-      triggerMap[trigger.event.name] = {};
-    }
-    triggerMap[trigger.event.name][trigger.name] = trigger;
+  function addPolicy(policy) {
+    policyMap[policy.name] = policy;
   }
 
-  function triggered(trigger) {
+  function triggered(policy, trigger) {
     let row = document.getElementById('trigger-' + trigger.event.name);
     let cell = document.getElementById('triggerValue-' + trigger.event.name);
     row.bgColor = "darkgreen";
@@ -631,18 +627,18 @@
   }
 
   //////////////////////////////////////////////////////////
-  // TRIGGERS
-  function getTriggers() {
-    io.socket.get('/trigger/list?mode=json', function (body, response) {
+  // POLICIES
+  function getPolicies() {
+    io.socket.get('/policy/list?mode=json', function (body, response) {
       for (let i = 0; i < body.length; i++) {
         let obj = body[i];
-        addTrigger(obj);
+        addPolicy(obj);
       }
-      drawTriggers();
+      drawPolicies();
     });
-    io.socket.on('trigger', function (obj) {
-      addTrigger(obj);
-      drawTriggers();
+    io.socket.on('policy', function (obj) {
+      addPolicy(obj);
+      drawPolicies();
     });
     io.socket.on('triggered', function (obj) {
       triggered(obj);
@@ -923,7 +919,7 @@
     initGraph();
     getVehicle();
     getEvents();
-    getTriggers();
+    getPolicies();
     getCloud();
     getHardware();
     getResources();
