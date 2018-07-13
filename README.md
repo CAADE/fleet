@@ -10,5 +10,6 @@ Application Stack, Cloud Stack, Hardware Stack. Vehicles are connected to the Da
 
 + [Documentation](http://fleet.readthedocs.io)
 + [GitHub Repo](https://github.com/CAADE/fleet)
+* [Docker Contaier madajaju/fleet](https://hub.docker.com/r/madajaju/fleet)
 
 
