@@ -2,7 +2,7 @@ module.exports = {
 
   friendlyName: 'app list',
 
-  description: ' Add description ',
+  description: 'List the applications in the data center',
 
   inputs: {
     mode: {

@@ -34,7 +34,7 @@ client.post(url, args, function (data, response) {
     console.error(data.error);
   }
   else {
-    console.log("Hardware loaded into the datacenter");
+    console.log("Policy loaded into the datacenter");
   }
 });
 

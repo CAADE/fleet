@@ -2,9 +2,7 @@
 module.exports = {
 
   friendlyName: 'app remove',
-
-  description: ' Add description ',
-
+  description: 'Remove an Application from the data center',
   inputs: {
     name: {
       description: 'Name of the Application to remove',

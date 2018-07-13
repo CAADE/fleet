@@ -1,35 +1,37 @@
 const path = require('path');
 const fs = require('fs');
 const childProcess = require('child_process');
-const cmd = process.argv[3]; // node, build, cmd
-const root = process.cwd() + "/deploy/uservices";
-npmBuildRecursive(root);
+const cmd = process.argv[2]; // node, build, cmd
+const root = process.cwd() + '/deploy/uservices';
+
 
 // it will be `npm run-script build` inside root in the end.
 console.log('===================================================================');
 console.log(`Performing "npm ${cmd}" inside root folder: ` + root);
 console.log('===================================================================');
 
+npmBuildRecursive(root);
+
 function npmBuildRecursive(folder) {
-  console.log("NPM Build Recursive: " + folder);
+  console.log('NPM Build Recursive: ' + folder);
 
   for (let subfolder of subfolders(folder)) {
-    npm_build_recursive(subfolder);
+    npmBuildRecursive(subfolder);
   }
 
   const hasPackageJson = fs.existsSync(path.join(folder, 'package.json'));
 
-  console.log("has package: " + hasPackageJson);
+  console.log('has package: ' + hasPackageJson);
   if (!hasPackageJson && path.basename(folder) !== 'code') {
     return;
   }
 
   if (folder !== root && hasPackageJson) {
     console.log('===================================================================');
-    console.log(`Performing "npm ${cmd}" inside ${folder === root ? 'root folder' : './' + path.relative(root, folder)}`);
+    console.log(`Performing "npm build" inside ${folder === root ? 'root folder' : './' + path.relative(root, folder)}`);
     console.log('===================================================================');
 
-    npm_build(folder);
+    npmBuild(folder);
   }
 
   for (let subfolder of subfolders(folder)) {
@@ -38,7 +40,7 @@ function npmBuildRecursive(folder) {
 }
 
 function npmBuild(where) {
-  childProcess.execSync("npm run-script ${cmd}", {cwd: where, env: process.env, stdio: 'inherit'})
+  childProcess.execSync('npm run-script ' + cmd, {cwd: where, env: process.env, stdio: 'inherit'});
 }
 
 function subfolders(folder) {

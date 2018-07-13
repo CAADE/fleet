@@ -1,12 +1,19 @@
 #!/usr/bin/env node
-
+const fs = require('fs');
 var program =  require('commander');
+var filename = __filename.replace(__dirname,'').substring(1); // Strip the leading slash '/'
 
-program
-  .version("0.0.1")
-  .command('addapp', 'Add and Application to the data center')
-  .command('addhardware [options]', 'Add hardware to the data center')
-  .command('initialize', 'Initialize the data center with hardware and applications')
-  .command('metrics [options]', 'Get DC metrics')
-  .parse(process.argv);
+program.version('0.0.1')
 
+files = fs.readdirSync(__dirname);
+for(let i in files) {
+  let file = files[i];
+  if(file.includes(filename) && file.length > filename.length) {
+    let items = file.split(/-/);
+    items.shift();
+    let cfile = items.join('/');
+    const action = require('../api/controllers/' + cfile);
+    program.command(items[1] + ' [options]', action.description);
+  }
+}
+program.parse(process.argv);

@@ -2,13 +2,13 @@
   "name": "fleet",
   "private": true,
   "version": "0.0.1",
-  "description": "A Sails application that simulates an automotive data center",
+  "description": "An automotive hybrid cloud data center simulator",
   "keywords": [],
   "dependencies": {
-    "async": "2.0.1",
-    "connect-redis": "3.2.0",
-    "grunt": "1.0.1",
-    "lodash": "3.10.1",
+    "async": "^2.6.1",
+    "connect-redis": "^3.3.3",
+    "grunt": "^1.0.3",
+    "lodash": "^3.10.1",
     "node-rest-client": "^3.1.0",
     "sails": "^1.0.0-46",
     "sails-hook-grunt": "^3.0.2",
@@ -16,12 +16,12 @@
     "sails-hook-sockets": "^1.5.3",
     "sails.io.js": "^1.2.1",
     "socket.io-client": "^2.1.1",
-    "socket.io-redis": "5.2.0",
+    "socket.io-redis": "^5.2.0",
     "vis": "^4.21.0",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "eslint": "4.11.0"
+    "eslint": "^4.19.1"
   },
   "scripts": {
     "start": "node app.js",

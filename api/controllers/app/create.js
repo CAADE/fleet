@@ -4,7 +4,7 @@ module.exports = {
 
   friendlyName: 'app create',
 
-  description: ' Add description ',
+  description: 'Create application in the data center',
 
   inputs: {
     name: {
